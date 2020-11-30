@@ -21,7 +21,7 @@ File named "ADGroups_ManagedBy_$username $timestamp.txt" in current directory eg
 
 .NOTES
 Script created by Davin Stirling, on 12 June 2017. 
-Last Updated by Patricia on 12 June 2017 (version 1). Took about 1hr, including testing & comments & basic exception handling
+Last Updated by Davin on 12 June 2017 (version 1). Took about 1hr, including testing & comments & basic exception handling
 Last Updated 30 June (version 2) - added 'wait for input' option if script is run from console
 Contact - davin.stirling@gmail.com
 
