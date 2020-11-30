@@ -1,7 +1,7 @@
 <# 	
 
 .SYNOPSIS
-Script to find what AD security groups a given manager owns, and change the ownership to another new manager ñ only one new manager can be specified
+Script to find what AD security groups a given manager owns, and change the ownership to another new manager ‚Äì only one new manager can be specified
 
 If you want to change ownership to multiple new managers, see the pair of scripts Export_ManagerOf.ps1 & Import_NewManager.ps1 
 http://sharepoint/_URL_REDACTED_/Scripts.aspx
@@ -28,9 +28,9 @@ FYI: this script will not find any Direct Reports of the AD user/manager - to ch
 File named "ChangeManager_from_$old_manager_to_$new_manager_$timestamp.txt" in current directory eg ChangeManager_from_bloggsj_to_smithj_2017-07-04-1044
 
 .NOTES
-Script created by - Patricia Hayden on 6 April 2017
-Last Updated by - Patricia on 4 July 2017 (version 2 - added synopsis/inputs/output etc; addecd 'wait for input' option if script is run from console & tested; renamed script)
-Contact - patricia.hayden.0@gmail.com
+Script created by - Davin Stirling on 6 April 2017
+Last Updated by - Davin on 4 July 2017 (version 2 - added synopsis/inputs/output etc; addecd 'wait for input' option if script is run from console & tested; renamed script)
+Contact - davin.stirling@gmail.com
 See Script KB webpage - http://sharepoint/_URL_REDACTED_/Scripts.aspx
 
 #>
@@ -72,22 +72,22 @@ if ($confirmation -eq 'y') {
     	   Set-ADGroup -Identity $temp_id -ManagedBy $new_manager
         }
         
-        write-host ì`nScript finished: For a list of security groups that were managed by $old_manager, before they were assigned to $new_manager, see file:  $Filename"
+        write-host ‚Äú`nScript finished: For a list of security groups that were managed by $old_manager, before they were assigned to $new_manager, see file:  $Filename"
     }
     catch [Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException] { # in case the user cant be found
-        write-host ìException Type: $($_.Exception.GetType().FullName).
+        write-host ‚ÄúException Type: $($_.Exception.GetType().FullName).
         `rException Message: $($_.Exception.Message).
-        `rAn Error occured - Perhaps the user $old_manager or $new_manager doesnt exist or their username was mis-speltî -ForegroundColor Cyan
+        `rAn Error occured - Perhaps the user $old_manager or $new_manager doesnt exist or their username was mis-spelt‚Äù -ForegroundColor Cyan
     }
     catch {
         write-host "Some other error occured. Perhaps the user doesn't manage any AD Groups. The output file may have been created but is likely empty"  -ForegroundColor Cyan
-        write-host ìException Type: $($_.Exception.GetType().FullName)
+        write-host ‚ÄúException Type: $($_.Exception.GetType().FullName)
             `rException Message: $($_.Exception.Message)" -ForegroundColor Cyan
     }
 
 } # end of confirmation prompt
 else {
-    write-host ìScript cancelled: Nothing has been changed in AD."
+    write-host ‚ÄúScript cancelled: Nothing has been changed in AD."
 }
 
 # If running in the console, wait for Enter key press before closing the window, so any error messages can be seen.
