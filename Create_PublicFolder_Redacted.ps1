@@ -33,7 +33,7 @@ $newsize.height = 50
 $newsize.width = 150
 $pswindow.windowsize = $newsize
 
-$pswindow.windowtitle = “Running Script - Create_PublicFolder.ps1, written by Patricia Hayden”
+$pswindow.windowtitle = “Running Script - Create_PublicFolder.ps1, written by Davin Stirling”
 
 <#
 ---------------------
